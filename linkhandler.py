@@ -60,7 +60,7 @@ class Link(object):
         try:
             index=self.count
             with open(self.filename,"a") as f:
-                string=str(index)+" "+url+" "+title+"\n"
+                string=str(index)+" "+url+" "+title.replace("\n"," ").strip()+"\n"
                 print string
                 f.write(string.encode('utf-8'))
         except Exception as e:

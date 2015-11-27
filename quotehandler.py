@@ -32,7 +32,7 @@ class Quote(object):
         try:
             index=self.count
             with open(self.filename,"a") as f:
-                string=str(index)+" "+quote+"\n"
+                string=str(index)+" "+quote.replace("\n"," ").strip()+"\n"
                 print string
                 f.write(string.encode('utf-8'))
         except Exception as e:
